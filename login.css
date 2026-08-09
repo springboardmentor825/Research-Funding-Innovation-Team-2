@@ -10,8 +10,6 @@ body {
     color: #263f53;
 }
 
-/* HEADER */
-
 header {
     height: 70px;
     background: #fff;
@@ -56,8 +54,6 @@ nav button {
     font-weight: 700;
 }
 
-/* PAGE */
-
 .page {
     min-height: calc(100vh - 70px);
     display: flex;
@@ -65,8 +61,6 @@ nav button {
     align-items: center;
     padding: 35px 5%;
 }
-
-/* LOGIN CONTAINER */
 
 .login-box {
     width: 100%;
@@ -80,8 +74,6 @@ nav button {
     grid-template-columns: 1.1fr .9fr;
     box-shadow: 0 12px 35px rgba(40, 65, 80, .08);
 }
-
-/* LEFT PANEL */
 
  .intro {
     padding: 32px 38px;
@@ -108,8 +100,6 @@ nav button {
     margin: 18px auto 0;
 }
 
-/* RIGHT PANEL */
-
 .form-area {
     padding: 48px 55px;
     display: flex;
@@ -133,8 +123,6 @@ h2 {
     line-height: 1.5;
     margin: 7px 0 25px;
 }
-
-/* FORM */
 
 form label {
     display: block;
@@ -162,8 +150,6 @@ input:focus {
     border-color: #6e9bb8;
     box-shadow: 0 0 0 3px rgba(47, 121, 168, .08);
 }
-
-/* PASSWORD */
 
 .password-title {
     display: flex;
@@ -210,14 +196,10 @@ input:focus {
     text-decoration: underline;
 }
 
-/* ERROR */
-
 .error {
     color: #c65353;
     font-size: 10px;
 }
-
-/* REMEMBER */
 
 .remember {
     display: flex !important;
@@ -230,8 +212,6 @@ input:focus {
 .remember input {
     accent-color: #34709b;
 }
-
-/* LOGIN BUTTON */
 
 .login-btn {
     width: 100%;
@@ -256,8 +236,6 @@ input:focus {
     transform: translateY(0);
 }
 
-/* MESSAGE */
-
 .message {
     text-align: center;
     font-size: 12px;
@@ -265,8 +243,6 @@ input:focus {
     font-weight: 500;
       color: #25835a;
 }
-
-/* SOCIAL DIVIDER */
 
 .or {
     display: flex;
@@ -285,8 +261,6 @@ input:focus {
     color: #929ca3;
     font-size: 10px;
 }
-
-/* GOOGLE / LINKEDIN */
 
 .social {
     display: grid;
@@ -316,8 +290,6 @@ input:focus {
     color: #3276a5;
 }
 
-/* SWITCH LOGIN / REGISTER */
-
 .switch {
     text-align: center;
     color: #7d8b94;
@@ -338,13 +310,9 @@ input:focus {
     text-decoration: underline;
 }
 
-/* HIDDEN */
-
 .hidden {
     display: none;
 }
-
-/* MOBILE */
 
 @media (max-width: 800px) {
 

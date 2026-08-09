@@ -17,8 +17,6 @@ document.getElementById("signupTop").onclick = () => {
 };
 
 
-/* Show password */
-
 document.getElementById("showPassword").onclick = () => {
 
     const input = document.getElementById("loginPassword");
@@ -32,8 +30,6 @@ document.getElementById("showPassword").onclick = () => {
         input.type === "password" ? "Show" : "Hide";
 };
 
-
-/* Login */
 
 document.getElementById("loginForm").onsubmit = (e) => {
 
@@ -56,15 +52,12 @@ document.getElementById("loginForm").onsubmit = (e) => {
         return;
     }
 
-    // loginMessage.textContent = "Login successful.";
-    // loginMessage.style.color = "#25835a";
+    
     alert("Login successful! Welcome to InnovFund.");
 
     // Later connect this to your backend
 };
 
-
-/* Register */
 
 document.getElementById("registerForm").onsubmit = (e) => {
 
@@ -93,8 +86,6 @@ document.getElementById("registerForm").onsubmit = (e) => {
     registerMessage.style.color = "#25835a";
 };
 
-
-/* Forgot password */
 
 document.getElementById("forgotBtn").onclick = () => {
     const email = prompt("Enter your registered email:");
