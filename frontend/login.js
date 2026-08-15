@@ -236,7 +236,9 @@ document.getElementById("registerForm").onsubmit = async (e) => {
         if (!response.ok) {
 
             registerMessage.textContent =
-                data.detail || "Unable to create account.";
+             typeof data.detail === "string"
+             ? data.detail
+             : JSON.stringify(data.detail || data);
 
             registerMessage.style.color = "#c65353";
 
