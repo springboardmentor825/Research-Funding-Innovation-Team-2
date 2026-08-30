@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config.database import db
 from app.routes.document import router as document_router
+from app.routes.innovation_scores import router as innovation_scores_router
 
 app = FastAPI(title="Research Platform API")
 
@@ -36,6 +37,7 @@ app.include_router(auth_router)
 app.include_router(research_profiles_router)
 app.include_router(funding_router)
 app.include_router(document_router)
+app.include_router(innovation_scores_router)
 
 
 
