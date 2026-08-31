@@ -90,7 +90,7 @@ document.getElementById("loginForm").onsubmit = async (e) => {
         loginMessage.textContent = "Logging in...";
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/auth/login",
+            "http://192.168.1.9:8000/api/auth/login",
             {
                 method: "POST",
 
@@ -214,7 +214,7 @@ document.getElementById("registerForm").onsubmit = async (e) => {
         registerMessage.style.color = "#25835a";
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/users/",
+            "http://192.168.1.9:8000/api/users/",
             {
                 method: "POST",
 
