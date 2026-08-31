@@ -21,9 +21,11 @@ class RoleService:
         if not last_role:
             return "Role001"
 
-        last_number = int(last_role["roleId"].replace("Role", ""))
+        last_number = int(
+            last_role["roleId"].replace("Role", "")
+        )
 
-        return f"Role{last_number+1:03d}"
+        return f"Role{last_number + 1:03d}"
 
 
     @staticmethod
@@ -36,13 +38,37 @@ class RoleService:
         for role in cursor:
             role["_id"] = str(role["_id"])
             roles.append(role)
+
         return roles
+
+
+    @staticmethod
+    async def get_role_by_id(role_id):
+
+        if not role_id:
+            return None
+
+        try:
+            role = roles_collection.find_one(
+                {"_id": ObjectId(role_id)}
+            )
+        except Exception:
+            return None
+
+        if not role:
+            return None
+
+        role["_id"] = str(role["_id"])
+
+        return role
 
 
     @staticmethod
     async def create_role(data):
 
-        exists = roles_collection.find_one({"code": data.code})
+        exists = roles_collection.find_one({
+            "code": data.code
+        })
 
         if exists:
             raise Exception("Role code already exists")
@@ -74,7 +100,12 @@ class RoleService:
             {"$set": update_data}
         )
 
-        role = roles_collection.find_one({"_id": ObjectId(role_id)})
+        role = roles_collection.find_one({
+            "_id": ObjectId(role_id)
+        })
+
+        if not role:
+            return None
 
         role["_id"] = str(role["_id"])
 
