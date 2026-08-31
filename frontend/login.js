@@ -152,23 +152,6 @@ document.getElementById("loginForm").onsubmit = async (e) => {
 //     const password = registerPassword.value;
 //     const confirm = confirmPassword.value;
 
-//     registerMessage.textContent = "";
-
-//     if (!name || !email || !password || !confirm) {
-//         registerMessage.textContent = "Please fill all fields.";
-//         registerMessage.style.color = "#c65353";
-//         return;
-//     }
-
-//     if (password !== confirm) {
-//         registerMessage.textContent = "Passwords do not match.";
-//         registerMessage.style.color = "#c65353";
-//         return;
-//     }
-
-//     registerMessage.textContent = "Account created successfully.";
-//     registerMessage.style.color = "#25835a";
-// };
 
 // REGISTER API
 
