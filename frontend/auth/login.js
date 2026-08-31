@@ -128,7 +128,7 @@ document.getElementById("loginForm").onsubmit = async (e) => {
 
         // Go to dashboard
         setTimeout(() => {
-            window.location.href = "http://localhost:3000/";
+            window.location.href = "/dashboard/adminDashboard/";
         }, 1000);
 
     } catch (error) {
