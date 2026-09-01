@@ -1,3 +1,7 @@
+# ============================================================
+# RESEARCHIQ - FUNDING ROUTES
+# ============================================================
+
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.funding import FundingRecommendationRequest
@@ -10,6 +14,24 @@ router = APIRouter(
 )
 
 
+# ============================================================
+# HEALTH
+# ============================================================
+
+@router.get("/health")
+def funding_health():
+
+    return {
+        "success": True,
+        "service": "funding",
+        "status": "running"
+    }
+
+
+# ============================================================
+# AI FUNDING RECOMMENDATION
+# ============================================================
+
 @router.post("/recommend")
 def recommend_funding(
     request: FundingRecommendationRequest
@@ -17,31 +39,80 @@ def recommend_funding(
 
     try:
 
-        # Combine title + description
-        innovation_text = ""
+        # ----------------------------------------------------
+        # Combine innovation title and description
+        # ----------------------------------------------------
+
+        parts = []
 
         if request.innovation_title:
-            innovation_text += (
-                request.innovation_title + ". "
+
+            parts.append(
+                request.innovation_title.strip()
             )
 
-        innovation_text += request.innovation_description
+        if request.innovation_description:
 
-        # Get recommendations
+            parts.append(
+                request.innovation_description.strip()
+            )
+
+        innovation_text = ". ".join(parts)
+
+        # ----------------------------------------------------
+        # Validate
+        # ----------------------------------------------------
+
+        if len(innovation_text.strip()) < 10:
+
+            raise HTTPException(
+                status_code=400,
+                detail="Innovation description must contain at least 10 characters."
+            )
+
+        # ----------------------------------------------------
+        # Generate recommendations
+        # ----------------------------------------------------
+
         recommendations = recommend_grants(
-            innovation_description=innovation_text,
-            top_k=request.top_k
+
+            innovation_description=
+                innovation_text,
+
+            top_k=
+                request.top_k
         )
 
+        # ----------------------------------------------------
+        # Response
+        # ----------------------------------------------------
+
         return {
+
             "success": True,
-            "count": len(recommendations),
-            "recommendations": recommendations
+
+            "count":
+                len(recommendations),
+
+            "recommendations":
+                recommendations
         }
+
+    except HTTPException:
+
+        raise
 
     except Exception as e:
 
+        print(
+            "[FUNDING] Recommendation error:",
+            e
+        )
+
         raise HTTPException(
+
             status_code=500,
-            detail=str(e)
+
+            detail=
+                f"Funding recommendation failed: {str(e)}"
         )

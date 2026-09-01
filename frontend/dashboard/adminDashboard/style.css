@@ -342,3 +342,459 @@ body { background: var(--bg); min-height: 100vh; }
   .sidebar { display: none; }
   .stat-card { min-width: 100%; }
 }
+/* ============================================================
+   RESEARCHIQ - COMMERCIALIZATION PAGE
+   ============================================================ */
+
+.commercialization-page {
+  width: 100%;
+}
+
+.commercialization-header {
+  margin-bottom: 24px;
+}
+
+.commercialization-label {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.commercialization-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.commercialization-header p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   COMMERCIALIZATION FORM
+   ============================================================ */
+
+.commercialization-form-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.commercialization-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.commercialization-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.commercialization-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.commercialization-form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.commercialization-form-group input,
+.commercialization-form-group textarea,
+.commercialization-form-group select {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 13px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.commercialization-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.commercialization-form-group input:focus,
+.commercialization-form-group textarea:focus,
+.commercialization-form-group select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(181, 243, 51, 0.08);
+}
+
+.commercialization-form-group select option {
+  background: var(--card);
+  color: var(--text);
+}
+
+
+/* ============================================================
+   ANALYZE BUTTON
+   ============================================================ */
+
+.analyze-button {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  padding: 13px 20px;
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--cyan)
+  );
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.analyze-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.analyze-spinner {
+  display: none;
+}
+
+
+/* ============================================================
+   ERROR MESSAGE
+   ============================================================ */
+
+.commercialization-error {
+  display: none;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fca5a5;
+  border-radius: 9px;
+  padding: 12px 14px;
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   RESULTS SECTION
+   ============================================================ */
+
+.commercialization-results {
+  display: none;
+  margin-top: 24px;
+}
+
+.commercialization-results-header {
+  margin-bottom: 18px;
+}
+
+.commercialization-results-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.commercialization-results-header p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+
+/* ============================================================
+   SCORE + READINESS
+   ============================================================ */
+
+.commercialization-score-panel {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.overall-score-card,
+.readiness-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.overall-score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      var(--panel) 58%,
+      transparent 59%
+    ),
+    conic-gradient(
+      var(--green) 61.5%,
+      var(--border) 61.5%
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.score-circle-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.score-circle-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.overall-score-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.readiness-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.readiness-card-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.readiness-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.readiness-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   RECOMMENDATION GRID
+   ============================================================ */
+
+.recommendations-section {
+  margin-top: 24px;
+}
+
+.recommendations-section > h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.recommendation-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(181, 243, 51, 0.35);
+}
+
+.recommendation-strategy {
+  display: inline-block;
+  color: var(--green);
+  background: rgba(181, 243, 51, 0.08);
+  border: 1px solid rgba(181, 243, 51, 0.2);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.recommendation-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.recommendation-card > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.recommendation-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.recommendation-score strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  color: var(--green);
+}
+
+.recommendation-score span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.recommendation-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(33, 38, 45, 0.6);
+}
+
+.recommendation-detail span {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recommendation-detail strong {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.recommendation-action {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 216, 255, 0.05);
+  border: 1px solid rgba(0, 216, 255, 0.12);
+}
+
+.recommendation-action > span {
+  display: block;
+  font-size: 10px;
+  color: var(--cyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.recommendation-action p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+  .commercialization-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commercialization-form-group.full-width {
+    grid-column: auto;
+  }
+
+  .commercialization-score-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .commercialization-form-panel,
+  .overall-score-card,
+  .readiness-card {
+    padding: 16px;
+  }
+
+  .commercialization-header h1 {
+    font-size: 21px;
+  }
+
+  .score-circle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .score-circle-value {
+    font-size: 28px;
+  }
+
+}

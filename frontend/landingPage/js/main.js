@@ -1,16 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const goToFunding = () => {
-    window.location.href = "funding.html";
-  };
+document.addEventListener("DOMContentLoaded", function () {
 
-  document.getElementById("exploreIntelligence")?.addEventListener("click", goToFunding);
-  document.getElementById("startExploring")?.addEventListener("click", goToFunding);
+    const exploreButton = document.getElementById("exploreIntelligence");
 
-  // Keep the original landing-page navigation behavior.
-  document.querySelectorAll('a[href="#login"]').forEach(link => {
-    link.addEventListener("click", event => {
-      event.preventDefault();
-      alert("Sign In will be connected to authentication in the next phase.");
-    });
-  });
+    if (exploreButton) {
+        exploreButton.addEventListener("click", function () {
+            window.location.href = "funding.html";
+        });
+    }
+
+    const startButton = document.getElementById("startExploring");
+
+    if (startButton) {
+        startButton.addEventListener("click", function () {
+            window.location.href = "funding.html";
+        });
+    }
+
 });

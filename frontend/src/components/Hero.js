@@ -22,9 +22,9 @@ function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#get-started" className="primary-button">
-            Explore Intelligence →
-          </a>
+         <a href="/research-dashboard" className="primary-button">
+  Explore Intelligence →
+</a>
 
           <a href="#workflow" className="secondary-button">
             See How It Works
