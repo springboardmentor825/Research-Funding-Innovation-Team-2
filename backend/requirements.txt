@@ -12,3 +12,5 @@ pydantic-settings
 python-multipart
 email-validator
 httpx
+supabase
+scikit-learn

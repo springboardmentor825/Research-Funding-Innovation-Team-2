@@ -29,10 +29,9 @@ class UserUpdate(BaseModel):
 # Response Schema
 class UserResponse(BaseModel):
     id: str
-    user_id: str          # <-- New field
+    user_id: str
     name: str
     email: EmailStr
-    password: str  
     role_id: str
     is_active: bool
     last_active: Optional[datetime] = None
