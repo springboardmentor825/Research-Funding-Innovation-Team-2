@@ -13,6 +13,9 @@ from app.routes.funding import router as funding_router
 from app.routes.document import router as document_router
 from app.routes.publications import router as publications_router
 from app.routes.technologies import router as technology_router
+from app.routes.patents import router as patents_router
+from app.routes.patent_analysis import router as patent_analysis_router
+from app.services.patent_service import ensure_patent_indexes
 
 app = FastAPI(title="Research Platform API")
 
@@ -41,6 +44,13 @@ app.include_router(funding_router)
 app.include_router(document_router)
 app.include_router(publications_router)
 app.include_router(technology_router)
+app.include_router(patents_router)
+app.include_router(patent_analysis_router)
+
+
+@app.on_event("startup")
+def create_patent_indexes():
+    ensure_patent_indexes()
 
 
 @app.get("/")
