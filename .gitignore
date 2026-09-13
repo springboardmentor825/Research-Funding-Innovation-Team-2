@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+node_modules/
+
+# Large local datasets
+backend/app/data/datasets.csv
+backend/app/data/grants.csv
+backend/app/data/patentbrief-patents.csv
+backend/app/data/technology_dataset.xlsx
+
+# ML generated files
+backend/app/ml_models/*.npy
+*.npy
+
+# OS / editor
+.DS_Store
+.vscode/
