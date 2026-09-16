@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Innovation Intelligence Platform</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet" />
-  <!-- Recharts via UMD (includes React & ReactDOM) -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.1/prop-types.min.js"></script>
-  <script src="https://unpkg.com/recharts@2.12.7/umd/Recharts.js"></script>
+  <title>Innovation Intelligence</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div id="root"></div>
-  <script src="app.js"></script>
+  <div class="dashboard-shell landing-shell">
+    <header class="page-header"><div><div class="eyebrow">DECISION PLATFORM</div><h1>Innovation Intelligence</h1><p>Choose a workspace to open its dedicated dashboard pages.</p></div></header>
+    <main class="role-grid">
+      <a class="role-card" href="startup/overview.html"><span class="role-kicker">01</span><h2>Startup</h2><p>Funding, technology, and commercialization.</p><span class="role-link">Open workspace →</span></a>
+      <a class="role-card" href="innovation-manager/overview.html"><span class="role-kicker">02</span><h2>Innovation Manager</h2><p>Portfolio, pipeline, and team performance.</p><span class="role-link">Open workspace →</span></a>
+      <a class="role-card" href="researcher/overview.html"><span class="role-kicker">03</span><h2>Researcher</h2><p>Trends, publications, patents, and scoring.</p><span class="role-link">Open workspace →</span></a>
+      <a class="role-card" href="admin/overview.html"><span class="role-kicker">04</span><h2>Administrator</h2><p>Usage, governance, and system settings.</p><span class="role-link">Open workspace →</span></a>
+    </main>
+    <footer>Innovation Intelligence Platform · HTML and CSS dashboard</footer>
+  </div>
 </body>
 </html>
